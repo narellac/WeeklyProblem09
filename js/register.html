@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Register</title>
+</head>
+<body>
+  <div>
+    <form id="form">
+      <legend>User registration</legend>
+      <p>
+        <label for="fieldName">Name</label>
+        <input type=text id="fieldName" required placeholder="Write your full name">
+      </p>
+      <p>
+        <label for="fieldEmail">Email</label>
+        <input type=email id="fieldEmail" required placeholder="email@domail.com">
+      </p>
+      <p>
+        <label for="fielPass">Password</label>
+        <input type=password id="fieldPass" required placeholder="min. 8 max. 15 characters" minlength="8" maxlength="15">
+      </p>
+      <p>
+        <label for="fieldConfirm">Confirm Password</label>
+        <input type=password id="fieldConfirm" required placeholder="Retype your password" minlength="8" maxlength="15">
+      </p>
+      <p>
+        <input type="reset" value="Reset">
+      </p>
+      <p>
+        <input type="submit" value="Submit" id="btm">
+      </p>
+      <a id="login" href="login.html" target="_blank">Log In</a>
+   </form>
+  </div>
+  <script src="register.js"></script>
+  <div id="blank">
+  </div>
+</body>
+</html>
