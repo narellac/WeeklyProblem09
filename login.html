@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Log In</title>
+</head>
+<body>
+  <div class="content">
+    <form id="loginForm">
+      <legend>User login</legend>
+      <p>
+        <label for="eMail">Email</label>
+        <input class="infoInput" type=email name="eMail" required placeholder="email@domail.com">
+      </p>
+      <p>
+        <label for="pass">Password</label>
+        <input class="infoInput" type=password id="pass" required placeholder="min. 8 max. 15 characters" minlength="8" maxlength="15">
+      </p>
+      <p>
+        <input class="button submitBtn" type="submit" value="Log In">
+      </p>
+      <p>
+        <input class="button resetBtn" type="reset" value="Reset">
+      </p>
+      <a id="register" href="register.html" target="_blank">You do not have an account?</a>
+    </form>
+  </div>
+  <script src="js/login.js"></script>
+  <div class="validationContent">
+  </div>
+</body>
+</html>
