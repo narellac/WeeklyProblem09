@@ -54,5 +54,3 @@ var validateAll = function() {
   }
 }
     validateAll()
-
-    console.log(validateAll);
