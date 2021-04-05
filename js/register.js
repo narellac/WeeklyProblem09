@@ -1,12 +1,10 @@
 var validation = document.getElementById('#blank');
 var result = 'Result of validation: ';
+var error =[];
 
 var largeName = function() {
-  var name = document.getElementById('#fieldName');
-  if (name.lenght == 4) {
-    return true;
-  }
-  else {
+  var name = document.getElementById('#fieldName').value;
+  if (name.length <= 4) {
     error.push( 'Does not meet the minimum required');
   }
 }
@@ -14,7 +12,7 @@ largeName()
 
 var correctEmail = function() {
   var email = document.getElementById('#fieldEmail').value;
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(valor)) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)) {
     return true;
   }
   else {
@@ -46,12 +44,15 @@ var matchPass = function() {
 matchPass()
 
 var validateAll = function() {
-  if (largeName == true && correctEmail == true && largePass == true && matchPass == true){
+  if (error.length === 0){
     validation.style.color = 'green';
     validation.textContent = 'Passed';
   }
   else {
     validation.style.color = 'red';
-    validation.textContent ? "Not pass":}
-validateAll()
+    validation.textContent = "Not pass";
+  }
 }
+    validateAll()
+
+    console.log(validateAll);
