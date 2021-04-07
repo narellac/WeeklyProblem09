@@ -9,35 +9,39 @@
 </head>
 <body>
   <div>
-    <form id="form">
+    <form action="https://jsonplaceholder.typicode.com" method="get">
       <legend>User registration</legend>
       <p>
         <label for="fieldName">Name</label>
-        <input type=text id="fieldName" required placeholder="Write your full name, min 4 letters" minlength="4">
+        <input class="principal" type=text id="fieldName" required placeholder="Min 6 letters and 1 space" pattern="[a-zA-Z ]{7,}" autofocus>
+        <p id="one"></p>
       </p>
       <p>
         <label for="fieldEmail">Email</label>
-        <input type=email id="fieldEmail" required placeholder="email@domail.com">
+        <input class="principal" type=email id="fieldEmail" required placeholder="email@domail.com">
+        <p id="two"></p>
       </p>
       <p>
         <label for="fielPass">Password</label>
-        <input type=password id="fieldPass" required placeholder="min. 8 max. 15 characters" minlength="8" maxlength="15">
+        <input class="principal" type=password id="fieldPass" required placeholder="Min. 8 - letters and numbers" pattern="[A-Za-z0-9]{8,}">
+        <p id="three"></p>
       </p>
       <p>
         <label for="fieldConfirm">Confirm Password</label>
-        <input type=password id="fieldConfirm" required placeholder="Retype your password" minlength="8" maxlength="15">
+        <input class="principal" type=password id="fieldConfirm" required placeholder="Retype your password" pattern="[A-Za-z0-9]{8,}">
+        <p id="four"></p>
       </p>
       <p>
-        <input type="reset" value="Reset">
+        <input type="reset" value="Reset" onclick>
       </p>
       <p>
-        <input type="submit" value="Submit" id="btm">
+        <input type="submit" value="Submit">
       </p>
       <a id="login" href="login.html" target="_blank">Log In</a>
    </form>
   </div>
-  <script src="js/register.js"></script>
-  <div id="blank">
+  <script src="js/eventRegister.js"></script>
+  <div id>
   </div>
 </body>
 </html>
