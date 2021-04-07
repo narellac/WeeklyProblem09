@@ -8,16 +8,18 @@
   <title>Log In</title>
 </head>
 <body>
-  <div class="content">
-    <form id="loginForm">
+  <div>
+    <form action="https://jsonplaceholder.typicode.com" method="get">
       <legend>User login</legend>
       <p>
         <label for="eMail">Email</label>
-        <input class="infoInput" type=email name="eMail" required placeholder="email@domail.com">
+        <input class="infoInput" type=email id="eMail" required placeholder="email@domail.com">
+        <p></p>
       </p>
       <p>
         <label for="pass">Password</label>
-        <input class="infoInput" type=password id="pass" required placeholder="min. 8 max. 15 characters" minlength="8" maxlength="15">
+        <input class="infoInput" type=password id="pass" required placeholder="Min. 8 - letters and numbers" pattern="[A-Za-z0-9]{8,}">
+        <p></p>
       </p>
       <p>
         <input class="button submitBtn" type="submit" value="Log In">
@@ -28,8 +30,8 @@
       <a id="register" href="register.html" target="_blank">You do not have an account?</a>
     </form>
   </div>
-  <script src="js/login.js"></script>
-  <div class="validationContent">
+  <script src="js/eventLogin.js"></script>
+  <div>
   </div>
 </body>
 </html>
