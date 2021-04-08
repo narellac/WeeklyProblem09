@@ -8,9 +8,8 @@ const three = document.querySelector('#three');
 const four = document.querySelector('#four');
 
 
-
 user.addEventListener('focus', (event) => {
-  event.target.style.background = ' ';
+  event.target.textConten = ' ';
 });
 
 user.addEventListener('blur', (event) => {
@@ -21,7 +20,7 @@ user.addEventListener('blur', (event) => {
 });
 
 email.addEventListener('focus', (event) => {
-  event.target.style.background = ' ';
+  event.target.textConten = ' ';
 });
 
 email.addEventListener('blur', (event) => {
@@ -32,7 +31,7 @@ email.addEventListener('blur', (event) => {
 });
 
 password.addEventListener('focus', (event) => {
-  event.target.style.background = ' ';
+  event.target.textConten = ' ';
 });
 
 password.addEventListener('blur', (event) => {
@@ -43,7 +42,7 @@ password.addEventListener('blur', (event) => {
 });
 
 confirmPass.addEventListener('focus', (event) => {
-  event.target.style.background = ' ';
+  event.target.textContent = ' ';
 });
 
 confirmPass.addEventListener('blur', (event) => {
