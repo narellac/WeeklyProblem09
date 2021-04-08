@@ -3,6 +3,10 @@ const password = document.querySelector('#pass');
 const two = document.querySelector('#two');
 const three = document.querySelector('#three');
 
+email.addEventListener('focus', (event) => {
+  event.target.textConten = ' ';
+});
+
 email.addEventListener('blur', (event) => {
   if(event.target){
     two.textContent = "Complete the field",
@@ -11,7 +15,7 @@ email.addEventListener('blur', (event) => {
 });
 
 password.addEventListener('focus', (event) => {
-  event.target.style.background = ' ';
+  event.target.textConten = ' ';
 });
 
 password.addEventListener('blur', (event) => {
