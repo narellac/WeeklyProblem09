@@ -11,19 +11,19 @@
   <div>
     <form action="https://jsonplaceholder.typicode.com" method="get">
       <legend>User login</legend>
-      <div>
+      <div id="divEmail">
         <label for="eMail">
           Email
         </label>
-        <input class="infoInput" type=email id="eMail" required placeholder="email@domail.com">
-        <span>The email must contain a valid format</span>
+        <input type="email" id="eMail" required placeholder="email@domail.com" autofocus>
+        <span class = "error">The email must contain a valid format</span>
       </div>
-      <div>
+      <div id="divPass">
         <label for="pass">
           Password
         </label>
-        <input class="infoInput" type=password id="pass" required placeholder="Min. 8 - letters and numbers">
-        <span>The password must contain at least 8 characters, consisting of letters and numbers</span>
+        <input type="password" id="pass" required placeholder="Min. 8 - letters and numbers">
+        <span class = "error">The password must contain at least 8 characters, consisting of letters and numbers</span>
     </div>
       <div>
         <input type="submit" value="Log In">
