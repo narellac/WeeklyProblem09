@@ -8,23 +8,27 @@
   <title>Log In</title>
 </head>
 <body>
-  <div>
-    <form action="https://jsonplaceholder.typicode.com" method="get">
+  <div id="body">
+    <form action="https://jsonplaceholder.typicode.com/users?email" method="get">
       <legend>User login</legend>
       <div id="divEmail">
-        <label for="eMail">
+        <label for="email">
           Email
         </label>
-        <input type="email" id="eMail" required placeholder="email@domail.com" autofocus>
-        <span class = "error">The email must contain a valid format</span>
+        <input type="email" id="email" required placeholder="email@domail.com" autofocus>
+        <span class = "error">
+          The email must contain a valid format
+        </span>
       </div>
       <div id="divPass">
-        <label for="pass">
+        <label for="password">
           Password
         </label>
-        <input type="password" id="pass" required placeholder="Min. 8 - letters and numbers">
-        <span class = "error">The password must contain at least 8 characters, consisting of letters and numbers</span>
-    </div>
+        <input type="password" id="password" required placeholder="Min. 8 - letters and numbers">
+        <span class = "error">
+          The password must contain at least 8 characters, consisting of letters and numbers
+        </span>
+      </div>
       <div>
         <input type="submit" value="Log In">
         <input type="reset" value="Reset" onclick>
