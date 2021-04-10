@@ -8,36 +8,44 @@
   <title>Register</title>
 </head>
 <body>
-  <div>
-    <form action="https://jsonplaceholder.typicode.com" method="get">
+  <div id="body">
+    <form action="https://jsonplaceholder.typicode.com/users?email" method="get">
       <legend>User registration</legend>
-      <div id="divName">
+      <div id="name">
         <label for="fieldName">
             Name
         </label>
-        <input class="principal" type="text" id="fieldName" required placeholder="Min 6 letters and 1 space" autofocus>
-        <span class="error">The name must contain at least 6 letters and a space</span>
+        <input class="principal" type="text" id="name" required placeholder="Min 6 letters and 1 space" autofocus>
+        <span class="error">
+          The name must contain at least 6 letters and a space
+        </span>
       </div>
       <div id="divEmail">
-        <label for="fieldEmail">
+        <label for="email">
           Email
         </label>
-        <input class="principal" type="email" id="fieldEmail" required placeholder="email@domail.com">
-        <span class="error">The email must contain a valid format</span>
+        <input class="principal" type="email" id="email" required placeholder="email@domail.com">
+        <span class="error">
+          The email must contain a valid format
+        </span>
       </div>
       <div id="divPass">
-        <label for="fieldPass">
+        <label for="password">
           Password
         </label>
-        <input class="principal" type="password" id="fieldPass" required placeholder="Min. 8 - letters and numbers">
-        <span class="error">The password must contain at least 8 characters, consisting of letters and numbers</span>
+        <input class="principal" type="password" id="password" required placeholder="Min. 8 - letters and numbers">
+        <span class="error">
+          The password must contain at least 8 characters, consisting of letters and numbers
+        </span>
       </div>
       <div id="divConfirm">
-        <label for="fieldConfirm">
+        <label for="confirm">
           Confirm Password
         </label>
-        <input class="principal" type="password" id="fieldConfirm" required placeholder="Retype your password">
-        <span class="error">Passwords do not match</span>
+        <input class="principal" type="password" id="confirm" required placeholder="Retype your password">
+        <span class="error">
+          Passwords do not match
+        </span>
       </div>
       <div id="divBtn">
         <input type="reset" value="Reset" onclick>
