@@ -11,22 +11,22 @@
   <div>
     <form action="https://jsonplaceholder.typicode.com" method="get">
       <legend>User login</legend>
-      <p>
-        <label for="eMail">Email</label>
+      <div>
+        <label for="eMail">
+          Email
+        </label>
         <input class="infoInput" type=email id="eMail" required placeholder="email@domail.com">
-        <p id="two"></p>
-      </p>
-      <p>
-        <label for="pass">Password</label>
+      </div>
+      <div>
+        <label for="pass">
+          Password
+        </label>
         <input class="infoInput" type=password id="pass" required placeholder="Min. 8 - letters and numbers" pattern="[A-Za-z0-9]{8,}">
-        <p id="three"></p>
-      </p>
-      <p>
+    </div>
+      <div>
         <input type="submit" value="Log In">
-      </p>
-      <p>
         <input type="reset" value="Reset" onclick>
-      </p>
+      </div>
       <a id="register" href="register.html" target="_blank">You do not have an account?</a>
     </form>
   </div>
