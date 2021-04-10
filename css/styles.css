@@ -57,5 +57,5 @@ a {
 }
 
 .error {
-  visibility: hidden;
+  display: none;
 }
