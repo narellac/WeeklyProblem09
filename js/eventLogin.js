@@ -1,6 +1,7 @@
 const error = document.getElementsByClassName('error');
 const email = document.getElementById('email');
 const passw = document.getElementById('password');
+const submit = document.getElementById('submit');
 
 // email validation
 
@@ -36,4 +37,3 @@ function changeErrorStyle(index) {
 function hideError(index) {
      error[index].style.display = 'none'
  };
-
