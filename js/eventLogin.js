@@ -2,6 +2,8 @@ const error = document.getElementsByClassName('error');
 const email = document.getElementById('email');
 const passw = document.getElementById('password');
 
+// email validation
+
 email.onblur = function() {validateEmail(email.value)};
 email.onfocus = function() {hideError(0)};
 
@@ -13,6 +15,8 @@ function validateEmail(emailInput){
     }
     return true;
 };
+
+// password validation
 
 passw.onblur = function() {validatePassword(passw.value)};
 passw.onfocus = function() {hideError(1)};
