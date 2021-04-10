@@ -16,8 +16,3 @@ This work was prepared in its entirety by Narella Calvente [narellacalvente@gmai
 ### Steps
 
 This content does not require any type of installation to view it.
-
-
-#### Clarifications
-
-Both validations present errors in their writing that made it difficult to carry out the test.
