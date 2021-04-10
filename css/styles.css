@@ -57,5 +57,32 @@ a {
 }
 
 .error {
+  color: red;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   display: none;
+}
+
+#divname {
+  padding: 20px 0;
+}
+
+#divEmail {
+  padding: 20px 0;
+}
+
+#divPass {
+  padding: 20px 0;
+}
+
+#divConfirm {
+  padding: 20px 0;
+}
+
+#body {
+  margin-left: 500px;
+}
+
+#body form {
+  padding: 40px 40px ;
 }
