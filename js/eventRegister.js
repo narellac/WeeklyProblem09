@@ -71,15 +71,31 @@ function hideError(index) {
      error[index].style.display = 'none'
  };
 
- // GET
+// field validations
 
- async function getUsers() {
-  fetch("https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com")
-  .then(Response => Response.json())
-  .then(data => console.log(data))
-  .catch()
-};
+function showValues() {
+  const valuesToShow = document.getElementById('hidden');
+  valuesToShow.innerHTML = null;
+  valuesToShow.innerHTML =
+      `<ul>
+          <li>Fullname: ${nameInp.value}</li>
+          <li>Email: ${email.value}</li>
+          <li>Password: ${password.value}</li>
+          <li>Confirm: ${confirmPass.value}</li>
+      </ul>`;
+}
 
-submit.onclick = function(){
-  getUsers();
-};
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  showValues();
+  sendRequest();
+});
+
+// GET
+
+function sendRequest() {
+  fetch(`https://jsonplaceholder.typicode.com/users?email=${email.value}`, {
+      method: 'GET'
+  })
+      .then((e) => console.log(e));
+}
