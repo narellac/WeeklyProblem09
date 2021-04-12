@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="body">
-    <form action="https://jsonplaceholder.typicode.com/users" method="get">
+    <form> <!-- action="https://jsonplaceholder.typicode.com/users" method="get" -->
       <legend>User login</legend>
       <div id="divEmail">
         <label for="email">
@@ -30,14 +30,14 @@
         </span>
       </div>
       <div>
-        <input type="submit" value="Log In" id="submit" formtarget="_blank">
+        <input type="submit" value="Log In" id="submit">
         <input type="reset" value="Reset">
       </div>
       <a id="register" href="register.html" target="_blank">You do not have an account?</a>
+      <div id="hidden">
+      </div>
     </form>
   </div>
   <script src="js/eventLogin.js"></script>
-  <div>
-  </div>
 </body>
 </html>
