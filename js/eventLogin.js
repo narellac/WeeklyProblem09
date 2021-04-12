@@ -31,9 +31,25 @@ function validatePassword(passwInput){
   return true;
 }
 
+// span
+
 function changeErrorStyle(index) {
     error[index].style.display = 'unset';
  };
 function hideError(index) {
      error[index].style.display = 'none'
  };
+
+
+//GET
+
+async function getUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com")
+  .then(Response => Response.json())
+  .then(data => console.log(data))
+  .catch()
+};
+
+submit.onclick = function(){
+  getUsers();
+};

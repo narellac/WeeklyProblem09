@@ -3,6 +3,7 @@ const nameInp = document.getElementById('name');
 const email = document.getElementById('email');
 const passw = document.getElementById('password');
 const confirmPass = document.getElementById('confirm');
+const submit = document.getElementById('submit');
 
 // name validation
 
@@ -60,9 +61,25 @@ function validateConfirm(confirmPass){
   return true;
 }
 
+// span
+
+
 function changeErrorStyle(index) {
     error[index].style.display = 'unset';
  };
 function hideError(index) {
      error[index].style.display = 'none'
  };
+
+ // GET
+
+ async function getUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com")
+  .then(Response => Response.json())
+  .then(data => console.log(data))
+  .catch()
+};
+
+submit.onclick = function(){
+  getUsers();
+};
