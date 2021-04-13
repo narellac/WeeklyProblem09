@@ -91,11 +91,22 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
   sendRequest();
 });
 
-// GET
+// GET (Neither of them works for me)
 
-function sendRequest() {
+/*function sendRequest() {
   fetch(`https://jsonplaceholder.typicode.com/users?email=${email.value}`, {
       method: 'GET'
   })
       .then((e) => console.log(e));
 }
+
+async function getUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com")
+  .then(Response => Response.json())
+  .then(data => console.log(data))
+  .catch()
+};
+
+submit.onclick = function(){
+  getUsers();
+};*/
