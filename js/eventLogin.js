@@ -27,7 +27,7 @@ passw.onfocus = function() {hideError(1)};
 
 function validatePassword(passwInput){
 var passwFormat = /[A-Za-z0-9]{8,}/;
-  if (!passwInput.match(passwFormat)) {
+    if (!passwInput.match(passwFormat)) {
     changeErrorStyle(1);
     errorArray.push("The p format is invalid");
     return false;
