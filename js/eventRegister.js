@@ -5,6 +5,8 @@ const passw = document.getElementById('password');
 const confirmPass = document.getElementById('confirm');
 const submit = document.getElementById('submit');
 
+let errorArray = [];
+
 // name validation
 
 nameInp.onblur = function() {validateName(nameInp.value)};
@@ -14,6 +16,7 @@ function validateName(nameInput){
   var nameInpFormat = /[A-Za-z ].{6,}/;
   if (!nameInput.match(nameInpFormat)) {
     changeErrorStyle(0);
+    errorArray.push("The n format is invalid");
     return false;
   }
   return true;
@@ -29,6 +32,7 @@ function validateEmail(emailInput){
     var emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailInput.match(emailFormat)) {
         changeErrorStyle(1);
+        errorArray.push("The e format is invalid");
         return false;
     }
     return true;
@@ -43,6 +47,7 @@ function validatePassword(passwInput){
   var passwFormat = /[A-Za-z0-9]{8,}/;
   if (!passwInput.match(passwFormat)) {
     changeErrorStyle(2);
+    errorArray.push("The p format is invalid");
     return false;
   }
   return true;
@@ -56,6 +61,7 @@ confirmPass.onfocus = function() {hideError(3)};
 function validateConfirm(confirmPass){
   if (confirmPass !== passw.value) {
     changeErrorStyle(3);
+    errorArray.push("The cp format is invalid");
     return false;
   }
   return true;
@@ -66,10 +72,10 @@ function validateConfirm(confirmPass){
 
 function changeErrorStyle(index) {
     error[index].style.display = 'unset';
- };
+};
 function hideError(index) {
-     error[index].style.display = 'none'
- };
+    error[index].style.display = 'none'
+};
 
 // field validations
 
@@ -91,22 +97,14 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
   sendRequest();
 });
 
-// GET (Neither of them works for me)
-
-/*function sendRequest() {
-  fetch(`https://jsonplaceholder.typicode.com/users?email=${email.value}`, {
-      method: 'GET'
-  })
+function sendRequest() {
+  const emailvalue = document.getElementById('email').value;
+  if(errorArray.length === 0) {
+      fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
+          method: 'GET'
+      })
       .then((e) => console.log(e));
-}
-
-async function getUsers() {
-  fetch("https://jsonplaceholder.typicode.com/users?email=randomEmail@gmail.com")
-  .then(Response => Response.json())
-  .then(data => console.log(data))
-  .catch()
+  } else {
+      console.log(errorArray);
+  }
 };
-
-submit.onclick = function(){
-  getUsers();
-};*/

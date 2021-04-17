@@ -3,6 +3,8 @@ const email = document.getElementById('email');
 const passw = document.getElementById('password');
 const submit = document.getElementById('submit');
 
+let errorArray = [];
+
 // email validation
 
 email.onblur = function() {validateEmail(email.value)};
@@ -12,6 +14,7 @@ function validateEmail(emailInput){
     var emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailInput.match(emailFormat)) {
         changeErrorStyle(0);
+        errorArray.push("The e format is invalid");
         return false;
     }
     return true;
@@ -26,6 +29,7 @@ function validatePassword(passwInput){
   var passwFormat = /[A-Za-z0-9]{8,}/;
   if (!passwInput.match(passwFormat)) {
     changeErrorStyle(1);
+    errorArray.push("The p format is invalid");
     return false;
   }
   return true;
@@ -35,12 +39,18 @@ function validatePassword(passwInput){
 
 function changeErrorStyle(index) {
     error[index].style.display = 'unset';
- };
+};
 function hideError(index) {
-     error[index].style.display = 'none'
- };
+    error[index].style.display = 'none'
+};
 
- // field validations
+
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendRequest();
+  showValues();
+});
+
 
 function showValues() {
   const valuesToShow = document.getElementById('hidden');
@@ -52,19 +62,14 @@ function showValues() {
       </ul>`;
 }
 
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  showValues();
-  sendRequest();
-});
-
-// GET
-
 function sendRequest() {
-  fetch('https://jsonplaceholder.typicode.com/users?email=${email.value}', {
-      method: 'GET'
-  })
+  const emailvalue = document.getElementById('email').value;
+  if(errorArray.length === 0) {
+      fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
+          method: 'GET'
+      })
       .then((e) => console.log(e));
-}
-
-sendRequest();
+  } else {
+      console.log('Something is missing')
+  }
+};
