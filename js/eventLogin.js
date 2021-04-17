@@ -78,5 +78,6 @@ function handleLogin() {
           password: passwordValue
       })
   })
-      .then((e) => console.log(e));
-}
+      .then(res => res.json())
+      .then(response => console.log('Success:', response));
+};

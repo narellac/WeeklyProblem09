@@ -115,5 +115,6 @@ function  handleRegister() {
       password: passwordvalue
     })
   })
-  .then((e) => console.log(e))
+      .then(res => res.json())
+      .then(response => console.log('Success:', response));
 }
