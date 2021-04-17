@@ -47,8 +47,8 @@ function hideError(index) {
 
 document.getElementById('loginForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  sendRequest();
   showValues();
+  handleLogin();
 });
 
 
@@ -62,14 +62,21 @@ function showValues() {
       </ul>`;
 }
 
-function sendRequest() {
+// Changes for new task
+
+function handleLogin() {
   const emailvalue = document.getElementById('email').value;
-  if(errorArray.length === 0) {
-      fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
-          method: 'GET'
+  const passwordValue = document.getElementById('password').value;
+
+  fetch(`http://localhost:4000/login`, {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          email: emailvalue,
+          password: passwordValue
       })
+  })
       .then((e) => console.log(e));
-  } else {
-      console.log('Something is missing')
-  }
-};
+}

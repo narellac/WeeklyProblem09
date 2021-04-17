@@ -79,6 +79,12 @@ function hideError(index) {
 
 // field validations
 
+document.getElementById('loginForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  showValues();
+  handleRegister();
+});
+
 function showValues() {
   const valuesToShow = document.getElementById('hidden');
   valuesToShow.innerHTML = null;
@@ -91,20 +97,23 @@ function showValues() {
       </ul>`;
 }
 
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  showValues();
-  sendRequest();
-});
+// Changes for new task
 
-function sendRequest() {
+function  handleRegister() {
+  const namevalue = document.getElementById('name').value;
   const emailvalue = document.getElementById('email').value;
-  if(errorArray.length === 0) {
-      fetch(`https://jsonplaceholder.typicode.com/users?email=${emailvalue}`, {
-          method: 'GET'
-      })
-      .then((e) => console.log(e));
-  } else {
-      console.log(errorArray);
-  }
-};
+  const passwordvalue = document.getElementById('password').value;
+
+  fetch(`http://localhost:4000/register`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      fullname: namevalue,
+      email: emailvalue,
+      password: passwordvalue
+    })
+  })
+  .then((e) => console.log(e))
+}
